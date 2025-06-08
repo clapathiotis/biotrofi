@@ -1,0 +1,200 @@
+/* filepath: /Users/christopherlapathiotis/Desktop/github/biotrofi/biotrofi_ang/src/app/header/header.component.scss */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #0B3D2E; /* Dark green for a luxurious feel */
+    color: #F5F5DC; /* Beige text for contrast */
+    align-items: center;
+  
+    &__left {
+      .header__title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin: 0;
+        color: #F5F5DC; /* Beige text */
+        transition: transform 0.3s ease, color 0.3s ease;
+  
+        &:hover {
+          transform: scale(1.1);
+          color: #B8860B; /* Gold on hover */
+        }
+      }
+    }
+  
+    &__right {
+      display: flex;
+      align-items: center;
+  
+      .header__nav {
+        display: flex;
+        gap: 20px;
+  
+        &--desktop {
+          display: flex;
+        }
+  
+        &--mobile {
+            display: flex;
+            flex-direction: column;
+            position: fixed; /* Make it fixed to cover the entire screen */
+            bottom: 0;
+            left: 0;
+            width: 100%; /* Full width */
+            height: 80%; /* Full height */
+            padding: 40px 0px; /* Add padding for spacing */
+            z-index: 1000;
+            align-items: center;
+            background-color: #0B3D2E; /* Dark green background for mobile menu */
+            overflow-y: auto; /* Allow scrolling if content overflows */
+      
+            a {
+              text-decoration: none;
+              color: #F5F5DC; /* Beige text */
+              font-size: 1.5rem; /* Larger font for better visibility */
+              font-weight: bold;
+              margin-bottom: 20px;
+              position: relative;
+              transition: color 0.3s ease, transform 0.3s ease;
+      
+              &:hover {
+                color: #B8860B; /* Gold on hover */
+                transform: scale(1.1);
+              }
+            }
+      
+            .header__btn {
+              margin-top: 20px; /* Add spacing between links and buttons */
+            }
+          }
+        
+  
+        .header__link {
+          text-decoration: none;
+          color: #F5F5DC; /* Beige text */
+          font-size: 1.2rem;
+          font-weight: 500;
+          position: relative;
+          transition: color 0.3s ease, transform 0.3s ease;
+  
+          &:hover {
+            color: #B8860B; /* Gold on hover */
+            transform: scale(1.1);
+          }
+  
+          /* Add underline effect on hover */
+          &:hover::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-color: #B8860B; /* Gold underline */
+            transition: width 0.3s ease;
+          }
+  
+          /* Default state for underline (hidden) */
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background-color: #B8860B;
+            transition: width 0.3s ease;
+          }
+        }
+      }
+  
+      .header__menu-icon {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+  
+        span {
+          display: block;
+          width: 25px;
+          height: 3px;
+          background-color: #F5F5DC; /* Beige for the hamburger icon */
+          transition: transform 0.5s, opacity 0.3s;
+        }
+  
+        &.active span:nth-child(1) {
+          transform: translateY(8px) rotate(45deg); /* Top bar transforms into a cross */
+        }
+  
+        &.active span:nth-child(2) {
+          opacity: 0; /* Middle bar disappears */
+        }
+  
+        &.active span:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg); /* Bottom bar transforms into a cross */
+        }
+      }
+    }
+  
+      .header__btn {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-radius: 30px; /* Rounded corners for a modern, luxurious look */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  
+        &--outline {
+          background-color: transparent;
+          color: #B8860B; /* Gold text */
+          border: 2px solid #B8860B; /* Gold border */
+          position: relative;
+          overflow: hidden;
+  
+          &:hover {
+            background-color: #B8860B; /* Gold background */
+            color: #0B3D2E; /* Dark green text */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+          }
+  
+          &:active {
+            transform: scale(0.95); /* Slight press effect */
+          }
+        }
+  
+        &--filled {
+          background: linear-gradient(90deg, #B8860B, #D4AF37); /* Gold gradient */
+          color: #0B3D2E; /* Dark green text */
+          border: 2px solid #B8860B; /* Gold border */
+          position: relative;
+          overflow: hidden;
+  
+          &:hover {
+            background: linear-gradient(90deg, #D4AF37, #B8860B); /* Reverse gradient on hover */
+            color: #F5F5DC; /* Beige text */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+          }
+  
+          &:active {
+            transform: scale(0.95); /* Slight press effect */
+          }
+        }
+      }
+
+    @media (max-width: 1024px) {
+        .header__nav--desktop {
+          display: none;
+        }
+    
+        .header__menu-icon {
+          display: flex;
+        }
+      }
+    }
+  

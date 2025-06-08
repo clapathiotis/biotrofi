@@ -1,1 +1,41 @@
-<p>header works!</p>
+<header class="header">
+  <div class="header__left">
+    <h1 class="header__title">Biotrofi</h1>
+  </div>
+  <div class="header__right">
+    <!-- Desktop Navigation -->
+    <nav class="header__nav header__nav--desktop">
+      <a href="#about-me" class="header__link">BIOCHEFFING</a>
+      <a href="#techstack" class="header__link">PRICING & BROCHURE</a>
+      <a href="#projects" class="header__link">TESTIMONIALS</a>
+      <a href="#projects" class="header__link">CONTACT</a>
+      <button class="header__btn header__btn--outline">Become a Biochef</button>
+      <button class="header__btn header__btn--filled">Find Your Chef</button>
+    </nav>
+
+    <!-- Mobile Menu Icon -->
+    <button
+      class="header__menu-icon"
+      (click)="toggleMenu()"
+      [class.active]="menuOpen"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Mobile Navigation -->
+    <nav
+      class="header__nav header__nav--mobile"
+      *ngIf="menuOpen"
+      @dropdownItems
+    >
+      <a href="#about-me" class="header__link">BIOCHEFFING</a>
+      <a href="#techstack" class="header__link">PRICING & BROCHURE</a>
+      <a href="#projects" class="header__link">TESTIMONIALS</a>
+      <a href="#projects" class="header__link">CONTACT</a>
+      <button class="header__btn header__btn--outline">Become a Biochef</button>
+      <button class="header__btn header__btn--filled">Find Your Chef</button>
+    </nav>
+  </div>
+</header>
